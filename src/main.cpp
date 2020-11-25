@@ -36,12 +36,18 @@ static char read_command(void)
 
 /**
  * @brief This function is used to read date and time in the fromat of YYYY-MM-DD hh:mm:ss 
- *        from the user and format it in the structure of datetime_t and return it.
  * 
+ *        from the user and format it in the structure of datetime_t and return it.
  * @return datetime_t The formated date and time in the structure of datetime_t.
  */
 static datetime_t read_datetime(void)
 {
+    datetime_t x; 
+    printf("\nType in the date: YYYY-MM-DD hh:mm:ss\n");
+    scanf("%d,%d,%d,%d,%d,%d",&x.year,&x.month,&x.day,&x.hour,&x.minute,&x.second);
+    
+
+    return x;
 }
 
 /**
