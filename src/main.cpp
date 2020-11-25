@@ -32,6 +32,8 @@ static void display_menu(void)
  */
 static char read_command(void)
 {
+    char comchar = Serial.read();
+    return comchar;
 }
 
 /**
@@ -81,13 +83,13 @@ void loop()
 
     if (command == 'S')
     {
-        datetime_t temp = read_datetime(); // Get date and time from the user
-        set_datetime(temp);                // Set the RTC
+        datetime_t temp = read_datetime();// Get date and time from the user
+        set_datetime(temp);// Set the RTC
     }
     else if (command == 'G')
     {
-        get_current_datetime();
-        // Get the current date and time of the RTC and Display it for the user
+        // Get the current date and time of the RTC
+        // Display it for the user
     }
     else if (command == '\n')
     {
