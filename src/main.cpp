@@ -43,7 +43,7 @@ static char read_command(void)
 static datetime_t read_datetime(void)
 {
     datetime_t x; 
-    printf("\nType in the date: YYYY-MM-DD hh:mm:ss\n");
+    Serial.println("\nType in the date: YYYY-MM-DD hh:mm:ss\n");
     scanf("%d,%d,%d,%d,%d,%d",&x.year,&x.month,&x.day,&x.hour,&x.minute,&x.second);
     
 
