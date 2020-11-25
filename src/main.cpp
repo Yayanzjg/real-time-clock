@@ -32,8 +32,14 @@ static void display_menu(void)
  */
 static char read_command(void)
 {
-    char comchar = Serial.read();
-    return comchar;
+    char chr = 0;
+    while((chr !='S')&&(chr !='G')&&(chr !='\n')){
+        if(Serial.available()){
+            chr = toupper(Serial.read());
+        }
+    }
+    Serial.printf("%c\n",chr);
+    return chr;
 }
 
 /**
@@ -44,6 +50,7 @@ static char read_command(void)
  */
 static datetime_t read_datetime(void)
 {
+
 }
 
 /**
